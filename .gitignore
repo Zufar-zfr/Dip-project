@@ -1,0 +1,18 @@
+# Local Python environments and caches
+.venv/
+.venv_*/
+__pycache__/
+*.py[cod]
+*.log
+
+# Datasets and generated maps
+/CoFly-WeedDB/
+/CoFly-WeedDB-MVP/data/
+
+# Training outputs, predictions, and model checkpoints
+/outputs/
+/runs/
+/CoFly-WeedDB-MVP/outputs/
+/CoFly-WeedDB-MVP/runs/
+/CoFly-WeedDB-MVP/models/
+*.pt

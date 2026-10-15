@@ -1,0 +1,30 @@
+# CoFly-WeedDB MVP - Requirements
+
+# Core dependencies
+numpy>=1.20.0
+opencv-python>=4.5.0
+pillow>=8.0.0
+pyyaml>=5.4.0
+
+# Deep Learning
+torch>=1.9.0
+ultralytics>=8.0.0  # YOLOv8
+
+# Web UI
+gradio>=3.0.0
+
+# Data processing
+pandas>=1.1.0
+
+# Geospatial (optional, but recommended)
+folium>=0.12.0
+rasterio>=1.2.0  # For GeoTIFF support (optional)
+
+# Utilities
+tqdm>=4.50.0
+matplotlib>=3.3.0
+scikit-image>=0.18.0
+
+# Development/Debugging (optional)
+# ipython>=7.0.0
+# jupyter>=1.0.0

@@ -1,0 +1,23 @@
+sequenceDiagram
+    actor User
+    participant UI as Gradio UI
+    participant Model as YOLOv8 Model
+    participant Tiler as Tile Inference
+    participant Heatmap as Heatmap Generator
+    participant Storage as File Storage
+
+    User->>UI: Upload image
+    UI->>Storage: Read input image
+    alt Single image mode
+        UI->>Model: Run detection
+        Model-->>UI: Bounding boxes
+    else Large image mode
+        UI->>Tiler: Run tile inference
+        Tiler->>Model: Detect on tiles
+        Model-->>Tiler: Tile detections
+        Tiler-->>UI: Merged detections
+    end
+    UI->>Heatmap: Generate heatmap
+    Heatmap-->>UI: Heatmap
+    UI-->>User: Show results
+    UI->>Storage: Save outputs

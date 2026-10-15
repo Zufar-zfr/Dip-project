@@ -1,0 +1,20 @@
+flowchart LR
+    Start([Start])
+    End([End])
+
+    U1[Upload image]
+    S1[Validate input]
+    G1{Large image?}
+    S2[Load trained YOLOv8 model]
+    S3[Run single image detection]
+    S4[Run tile based detection]
+    S5[Merge detections]
+    S6[Generate bounding boxes]
+    S7[Generate heatmap]
+    S8[Display results]
+    S9[Save results]
+
+    Start --> U1 --> S1 --> S2 --> G1
+    G1 -->|No| S3 --> S6
+    G1 -->|Yes| S4 --> S5 --> S6
+    S6 --> S7 --> S8 --> S9 --> End
